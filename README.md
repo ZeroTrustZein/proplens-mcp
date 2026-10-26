@@ -55,5 +55,8 @@ Flags: `-v/--version`, `-h/--help`.
 - `type`: `apartment | house | land | commercial`
 - `listingType`: `sale | rent`
 - `currency`: 3-letter code. Price filters compare `amount` only, no currency conversion.
+- Required: `id`, `title`, `type`, `listingType`, `price`, `address.city`, `address.country`.
 - Optional: `bedrooms`, `bathrooms`, `areaSqm`, `address.street/region/postalCode`.
+- Validation: `price.amount` ≥ 0; `bedrooms`/`bathrooms` non-negative ints; `areaSqm` > 0.
+- Filters: all combined with AND; `minPrice`/`maxPrice` inclusive.
 - `minBedrooms` treats missing `bedrooms` as 0.
